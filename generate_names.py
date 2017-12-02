@@ -23,7 +23,7 @@ class GenerateNames(object):
 
         return name
 
-    def get(self, count=100):
+    def get(self, count=1000):
         names = []
         for i in range(count):
             name = self.new_name()
