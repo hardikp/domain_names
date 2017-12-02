@@ -9,6 +9,7 @@ class CheckNames(object):
         self.client = boto3.client('route53domains')
 
     def get_status(self, name):
+        # http://boto3.readthedocs.io/en/latest/reference/services/route53domains.html#Route53Domains.Client.check_domain_availability
         response = self.client.check_domain_availability(DomainName=name)
         status = response['Availability']
 
