@@ -7,19 +7,20 @@ consonents = list(set(string.ascii_lowercase) - set(vowels))
 
 
 class GenerateNames(object):
-    def __init__(self, min_length=4, max_length=5):
-        self.min_length = min_length
-        self.max_length = max_length
+    def __init__(self):
+        pass
 
     def new_name(self):
         name = 'a'  # First letter has to be a
 
         name += random.choice(consonents)
         name += random.choice(vowels)
+        name += random.choice(consonents)
+        name += random.choice(vowels)
 
-        length = random.randrange(self.min_length, self.max_length + 1)
-        for i in range(length - 3):
-            name += random.choice(string.ascii_lowercase)
+        # length = random.randrange(self.min_length, self.max_length + 1)
+        # for i in range(length - 3):
+        #     name += random.choice(string.ascii_lowercase)
 
         return name
 
